@@ -7,7 +7,7 @@ import {
   DELETE_COMPLETED_TODO,
   SHOW_TODO_LIST,
   COMLETED_ALL_TODO,
-  All_TODO_STATE,
+  DELETE_TODO,
 } from './actionTypes';
 
 let nextTodoId = 0;
@@ -51,4 +51,9 @@ export const showTodoList = (showlist) => ({
 export const completedAllTodo = (iscompleted) => ({
   type: COMLETED_ALL_TODO,
   iscompleted,
+});
+
+export const deleteTodo = (id) => ({
+  type: DELETE_TODO,
+  id,
 });

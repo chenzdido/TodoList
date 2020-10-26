@@ -25,11 +25,18 @@ class Todo extends Component {
               textDecorationLine: completed ? 'line-through' : 'none',
             }}
             onChangeText={(textValue) => {
-              console.log(textValue);
               changeTodoText(id, textValue);
             }}
             defaultValue={text}
           />
+          <View style={styles.circle}>
+            <Button
+              title={completed ? '·' : ''}
+              onPress={() => {
+                this.props.deleteTodo(id);
+              }}
+            />
+          </View>
         </View>
       </>
     );
