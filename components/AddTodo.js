@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {View, TextInput, Button} from 'react-native';
 
+let isCompleted = true;
 class AddTodo extends Component {
   constructor(props) {
     super(props);
   }
   render() {
-    let isCompleted = true;
     return (
       <>
         <View style={{flexDirection: 'row'}}>
