@@ -39,6 +39,7 @@ class AddTodo extends Component {
             title="Add"
             onPress={() => {
               this.props.addTodo(this.props.text);
+              this.props.setTodoText('');
             }}
           />
         </View>
