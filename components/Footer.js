@@ -3,7 +3,7 @@ import {Button, Text, View} from 'react-native';
 
 class Footer extends Component {
   render() {
-    const {todos, filter, setFilter} = this.props;
+    const {todos, filter, setFilter, deleteCompletedTodo} = this.props;
     const length = todos.filter((todo) => !todo.completed).length;
     return (
       <>
@@ -24,6 +24,7 @@ class Footer extends Component {
             onPress={() => setFilter('completed')}
             title="completed"
           />
+          {todos.length - length > 0 && <Button title="Clear completed" onPress={() => deleteCompletedTodo()}/>}
         </View>
       </>
     );

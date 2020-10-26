@@ -4,6 +4,7 @@ import {
   SET_TODO_TEXT,
   SET_FILTER,
   CHANGE_TODO_TEXT,
+  DELETE_COMPLETED_TODO,
 } from './actionTypes';
 
 let nextTodoId = 0;
@@ -33,4 +34,8 @@ export const changeTodoText = (id, text) => ({
   type: CHANGE_TODO_TEXT,
   text,
   id,
+});
+
+export const deleteCompletedTodo = () => ({
+  type: DELETE_COMPLETED_TODO,
 });

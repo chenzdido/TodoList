@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {setFilter} from '../actions';
+import {setFilter, deleteCompletedTodo} from '../actions';
 import Footer from '../components/Footer';
 
 const mapStateToProps = (state) => ({
@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   setFilter: (filter) => dispatch(setFilter(filter)),
+  deleteCompletedTodo: () => dispatch(deleteCompletedTodo()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Footer);
