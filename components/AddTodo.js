@@ -6,15 +6,19 @@ class AddTodo extends Component {
     super(props);
   }
   render() {
+    let is = true;
     return (
       <>
         <View style={{flexDirection: 'row'}}>
           <Button
             title="show"
             onPress={() => {
-              console.log(this.props);
-              this.props.showTodoList(!this.props.showlist);
-              console.log(this.props.showlist);
+              if (this.props.filter === 'all') {
+                this.props.completedAllTodo(is);
+                is = !is;
+              } else {
+                this.props.showTodoList(!this.props.showlist);
+              }
             }}
           />
           <TextInput

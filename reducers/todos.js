@@ -3,6 +3,7 @@ import {
   TOGGLE_TODO,
   CHANGE_TODO_TEXT,
   DELETE_COMPLETED_TODO,
+  COMLETED_ALL_TODO,
 } from '../actions/actionTypes';
 
 const todos = (state = [], action) => {
@@ -26,6 +27,8 @@ const todos = (state = [], action) => {
       );
     case DELETE_COMPLETED_TODO:
       return state.filter((todo) => !todo.completed);
+    case COMLETED_ALL_TODO:
+      return state.map((todo) => ({...todo, completed: action.iscompleted}));
     default:
       return state;
   }
