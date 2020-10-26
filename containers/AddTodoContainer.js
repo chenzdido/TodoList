@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => ({
   setTodoText: (text) => dispatch(setTodoText(text)),
   addTodo: (text) => dispatch(addTodo(text)),
   showTodoList: (showlist) => dispatch(showTodoList(showlist)),
-  completedAllTodo: (iscompleted) => dispatch(completedAllTodo(iscompleted)),
+  completedAllTodo: (isCompleted) => dispatch(completedAllTodo(isCompleted)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddTodo);

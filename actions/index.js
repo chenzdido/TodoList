@@ -48,9 +48,9 @@ export const showTodoList = (showlist) => ({
   showlist,
 });
 
-export const completedAllTodo = (iscompleted) => ({
+export const completedAllTodo = (isCompleted) => ({
   type: COMLETED_ALL_TODO,
-  iscompleted,
+  isCompleted,
 });
 
 export const deleteTodo = (id) => ({

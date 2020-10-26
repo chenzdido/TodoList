@@ -6,7 +6,7 @@ class AddTodo extends Component {
     super(props);
   }
   render() {
-    let is = true;
+    let isCompleted = true;
     return (
       <>
         <View style={{flexDirection: 'row'}}>
@@ -14,8 +14,9 @@ class AddTodo extends Component {
             title="show"
             onPress={() => {
               if (this.props.filter === 'all') {
-                this.props.completedAllTodo(is);
-                is = !is;
+                this.props.showTodoList(true);
+                this.props.completedAllTodo(isCompleted);
+                isCompleted = !isCompleted;
               } else {
                 this.props.showTodoList(!this.props.showlist);
               }

@@ -24,7 +24,12 @@ class Footer extends Component {
             onPress={() => setFilter('completed')}
             title="completed"
           />
-          {todos.length - length > 0 && <Button title="Clear completed" onPress={() => deleteCompletedTodo()}/>}
+          {todos.length - length > 0 && (
+            <Button
+              title="Clear completed"
+              onPress={() => deleteCompletedTodo()}
+            />
+          )}
         </View>
       </>
     );

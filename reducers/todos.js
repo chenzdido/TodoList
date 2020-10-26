@@ -29,7 +29,7 @@ const todos = (state = [], action) => {
     case DELETE_COMPLETED_TODO:
       return state.filter((todo) => !todo.completed);
     case COMLETED_ALL_TODO:
-      return state.map((todo) => ({...todo, completed: action.iscompleted}));
+      return state.map((todo) => ({...todo, completed: action.isCompleted}));
     case DELETE_TODO:
       return state.filter((todo) => todo.id != action.id);
     default:

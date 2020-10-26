@@ -5,7 +5,6 @@ import TodoContainer from '../containers/TodoContainer';
 class TodoList extends Component {
   render() {
     const {todos, toggleTodo} = this.props;
-    console.log(todos);
     return (
       <>
         <View>
