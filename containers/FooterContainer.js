@@ -3,6 +3,7 @@ import {setFilter} from '../actions';
 import Footer from '../components/Footer';
 
 const mapStateToProps = (state) => ({
+  todos: state.todos,
   filter: state.filter,
 });
 

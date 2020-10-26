@@ -7,37 +7,19 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-import AddTodo from './components/AddTodo';
-import TodoList from './components/TodoList';
-import Footer from './components/Footer';
+import {createStore} from 'redux';
+import {StyleSheet} from 'react-native';
+import {Provider} from 'react-redux';
+import rootReducer from './reducers';
+import Group from './components/Group';
 
 const App: () => React$Node = () => {
+  const store = createStore(rootReducer);
+  console.log(store);
   return (
-    <>
-      <View>
-        <Text>Todos</Text>
-        <AddTodo />
-        <TodoList />
-        <Footer />
-      </View>
-    </>
+    <Provider store={store}>
+      <Group />
+    </Provider>
   );
 };
 

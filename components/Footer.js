@@ -1,12 +1,29 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {Button, Text, View} from 'react-native';
 
 class Footer extends Component {
   render() {
+    const {todos, filter, setFilter} = this.props;
+    const length = todos.filter((todo) => !todo.completed).length;
     return (
       <>
-        <View>
-          <Text>Footer</Text>
+        <View style={{flexDirection: 'row'}}>
+          <Text>{length} items left</Text>
+          <Button
+            disabled={filter === 'all'}
+            onPress={() => setFilter('all')}
+            title="all"
+          />
+          <Button
+            disabled={filter === 'active'}
+            onPress={() => setFilter('active')}
+            title="active"
+          />
+          <Button
+            disabled={filter === 'completed'}
+            onPress={() => setFilter('completed')}
+            title="completed"
+          />
         </View>
       </>
     );
