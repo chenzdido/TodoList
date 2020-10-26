@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, TextInput, Button} from 'react-native';
+import {View, TextInput, Button} from 'react-native';
 
 class AddTodo extends Component {
   constructor(props) {
@@ -9,6 +9,14 @@ class AddTodo extends Component {
     return (
       <>
         <View style={{flexDirection: 'row'}}>
+          <Button
+            title="show"
+            onPress={() => {
+              console.log(this.props);
+              this.props.showTodoList(!this.props.showlist);
+              console.log(this.props.showlist);
+            }}
+          />
           <TextInput
             style={{
               height: 40,

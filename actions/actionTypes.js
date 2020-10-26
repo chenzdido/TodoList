@@ -4,3 +4,4 @@ export const SET_TODO_TEXT = 'SET_TODO_TEXT';
 export const SET_FILTER = 'SET_FILTER';
 export const CHANGE_TODO_TEXT = 'CHANGE_TODO_TEXT';
 export const DELETE_COMPLETED_TODO = 'DELETE_COMPLETED_TODO';
+export const SHOW_TODO_LIST = 'SHOW_TODO_LIST';

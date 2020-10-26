@@ -9,18 +9,20 @@ class TodoList extends Component {
     return (
       <>
         <View>
-          <FlatList
-            data={todos}
-            renderItem={(todo) => (
-              <TodoContainer
-                {...todo}
-                onClick={() => {
-                  toggleTodo(todo.item.id);
-                }}
-              />
-            )}
-            keyExtractor={(todo) => todo.id.toString()}
-          />
+          {this.props.showlist && (
+            <FlatList
+              data={todos}
+              renderItem={(todo) => (
+                <TodoContainer
+                  {...todo}
+                  onClick={() => {
+                    toggleTodo(todo.item.id);
+                  }}
+                />
+              )}
+              keyExtractor={(todo) => todo.id.toString()}
+            />
+          )}
         </View>
       </>
     );

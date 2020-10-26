@@ -5,6 +5,7 @@ import {
   SET_FILTER,
   CHANGE_TODO_TEXT,
   DELETE_COMPLETED_TODO,
+  SHOW_TODO_LIST,
 } from './actionTypes';
 
 let nextTodoId = 0;
@@ -38,4 +39,9 @@ export const changeTodoText = (id, text) => ({
 
 export const deleteCompletedTodo = () => ({
   type: DELETE_COMPLETED_TODO,
+});
+
+export const showTodoList = (showlist) => ({
+  type: SHOW_TODO_LIST,
+  showlist,
 });
