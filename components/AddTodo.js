@@ -4,7 +4,6 @@ import {Text, View, TextInput, Button} from 'react-native';
 class AddTodo extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props, 'dasgjdasgdkashdksa');
   }
   render() {
     return (

@@ -1,4 +1,10 @@
-import {ADD_TODO, TOGGLE_TODO, SET_TODO_TEXT, SET_FILTER} from './actionTypes';
+import {
+  ADD_TODO,
+  TOGGLE_TODO,
+  SET_TODO_TEXT,
+  SET_FILTER,
+  CHANGE_TODO_TEXT,
+} from './actionTypes';
 
 let nextTodoId = 0;
 
@@ -21,4 +27,10 @@ export const setTodoText = (text) => ({
 export const setFilter = (filter) => ({
   type: SET_FILTER,
   filter,
+});
+
+export const changeTodoText = (id, text) => ({
+  type: CHANGE_TODO_TEXT,
+  text,
+  id,
 });

@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Button, StyleSheet, TextInput, View} from 'react-native';
 
 class Todo extends Component {
   render() {
-    const {completed, text} = this.props.item;
+    const {completed, text, id} = this.props.item;
+    const {todos, changeTodoText} = this.props;
+    console.log(todos);
     return (
       <>
         <View style={{flexDirection: 'row', paddingTop: 20}}>
@@ -11,7 +13,6 @@ class Todo extends Component {
             <Button
               title={completed ? '·' : ''}
               onPress={() => {
-                console.log(this.props.onClick);
                 this.props.onClick();
               }}
             />
@@ -22,6 +23,10 @@ class Todo extends Component {
               width: 300,
               paddingRight: 20,
               textDecorationLine: completed ? 'line-through' : 'none',
+            }}
+            onChangeText={(textValue) => {
+              console.log(textValue);
+              changeTodoText(id, textValue);
             }}
             defaultValue={text}
           />

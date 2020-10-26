@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {FlatList, View} from 'react-native';
-import Todo from './Todo';
+import TodoContainer from '../containers/TodoContainer';
 
 class TodoList extends Component {
   render() {
-    const {todos, toggleTodo, setTodoText} = this.props;
+    const {todos, toggleTodo} = this.props;
     console.log(todos);
     return (
       <>
@@ -12,7 +12,7 @@ class TodoList extends Component {
           <FlatList
             data={todos}
             renderItem={(todo) => (
-              <Todo
+              <TodoContainer
                 {...todo}
                 onClick={() => {
                   toggleTodo(todo.item.id);
