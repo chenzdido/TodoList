@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Text, View} from 'react-native';
+import {Button, StyleSheet, Text, View} from 'react-native';
 
 class Footer extends Component {
   render() {
@@ -7,8 +7,10 @@ class Footer extends Component {
     const length = todos.filter((todo) => !todo.completed).length;
     return (
       <>
-        <View style={{flexDirection: 'row'}}>
-          <Text>{length} items left</Text>
+        <View style={styles.footer}>
+          <Text style={{color: 'gray', fontSize: 18, paddingRight: 5}}>
+            {length} items left
+          </Text>
           <Button
             disabled={filter === 'all'}
             onPress={() => setFilter('all')}
@@ -35,5 +37,14 @@ class Footer extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  footer: {
+    width: 300,
+    height: 50,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+});
 
 export default Footer;

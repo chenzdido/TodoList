@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, TextInput, Button} from 'react-native';
+import {View, TextInput, Button, StyleSheet} from 'react-native';
 
 let isCompleted = true;
 class AddTodo extends Component {
@@ -9,9 +9,9 @@ class AddTodo extends Component {
   render() {
     return (
       <>
-        <View style={{flexDirection: 'row'}}>
+        <View style={styles.header}>
           <Button
-            title="show"
+            title="^"
             onPress={() => {
               if (this.props.filter === 'all') {
                 this.props.showTodoList(true);
@@ -36,6 +36,7 @@ class AddTodo extends Component {
             }}
           />
           <Button
+            style={styles.add}
             title="Add"
             onPress={() => {
               this.props.addTodo(this.props.text);
@@ -47,5 +48,14 @@ class AddTodo extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  header: {
+    width: 250,
+    height: 50,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+});
 
 export default AddTodo;

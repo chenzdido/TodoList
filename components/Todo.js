@@ -8,7 +8,7 @@ class Todo extends Component {
     console.log(todos);
     return (
       <>
-        <View style={{flexDirection: 'row', paddingTop: 20}}>
+        <View style={styles.todo}>
           <View style={styles.circle}>
             <Button
               title={completed ? '·' : ''}
@@ -31,7 +31,7 @@ class Todo extends Component {
           />
           <View style={styles.circle}>
             <Button
-              title={completed ? '·' : ''}
+              title="X"
               onPress={() => {
                 this.props.deleteTodo(id);
               }}
@@ -55,6 +55,12 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderRadius: 15,
     paddingBottom: 2,
+  },
+  todo: {
+    width: 250,
+    height: 50,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 
